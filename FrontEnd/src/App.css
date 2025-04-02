@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+}
+
+/* Left container does not scroll; its child .code will scroll instead */
+main .left {
+  background-color: #000000;
+  position: relative;
+  font-size: medium;
+}
+
+/* Code container scrolls when content overflows */
+.left .code {
+  height: 100%;
+  overflow: auto;
+  border-radius: 0.7rem;
+  background-color: #0C0C0C;
+}
+
+/* Ensure pre and code elements inside don’t add extra spacing */
+.code pre,
+.code pre code {
+  margin: 0;
+  padding: 0;
+  border-radius: 0.7rem;
+  background-color: #0C0C0C;
+}
+
+/* Review button fixed at bottom-right of left container */
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #2CBB5D;
+  color: #ffffff;
+  padding: 0.5rem 2rem;
+  border-radius: 0.7rem;
+  font-weight: 500;
+  font-size: medium;
+  user-select: none;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+main .right {
+  background-color: #343434;
+  padding: 1rem 2rem;
+  overflow: auto;
+}
